@@ -1,7 +1,7 @@
 class SportsTeam
 
-  attr_reader :team_name
-  attr_accessor :coach, :points, :players
+  attr_reader :team_name, :players
+  attr_accessor :coach, :points
 
   def initialize(team_name, players, coach, points)
     @team_name = team_name
@@ -15,12 +15,17 @@ class SportsTeam
     return @players.length
   end
 
+  def set_coach(new_coach)
+    @coach = new_coach
+  end
+
   def check_player_name(player_name)
     for player in @players
       if player == player_name
         return true
       end
     end
+    return false
   end
 
    def change_points(match_result)
