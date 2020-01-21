@@ -25,16 +25,15 @@ class TestSingleClassLab < Minitest::Test
   end
 
   def test_check_player_name
-    assert_equal("Malcolm", @sports_team.check_player_name("Malcolm"))
+    assert_equal(true , @sports_team.check_player_name("Roosa"))
   end
 
   def test_change_points__win
-    @sports_team.change_points(1)
-    assert_equal(1, @sports_team.points)
+    assert_equal(1, @sports_team.change_points(1))
   end
 
   def test_change_points__loss
-    assert_equal(0, @sports_team.points)
+    assert_equal(0, @sports_team.change_points_loss(0))
   end
 
 end

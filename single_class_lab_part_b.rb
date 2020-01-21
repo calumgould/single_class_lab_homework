@@ -1,13 +1,13 @@
 class SportsTeam
 
-  attr_reader :team_name, :players
-  attr_accessor :coach, :points
+  attr_reader :team_name
+  attr_accessor :coach, :points, :players
 
   def initialize(team_name, players, coach, points)
     @team_name = team_name
     @players = players
     @coach = coach
-    @points = points
+    @points = 0
   end
 
   def add_new_player(player_name)
@@ -18,20 +18,20 @@ class SportsTeam
   def check_player_name(player_name)
     for player in @players
       if player == player_name
-        return player_name
+        return true
       end
     end
   end
 
- def change_points(match_result)
-  return @points += match_result
- end
+   def change_points(match_result)
+    return @points += match_result
+   end
+
+  def check_team_members()
+    return @players
+  end
 
 end
-
-
-
-
 # ### Part B
 #
 # Now we would like you to make a class that represents a sports team.
